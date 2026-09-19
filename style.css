@@ -1,0 +1,680 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+    --background: #f4f6f8;
+    --card-background: #ffffff;
+
+    --text: #1f2937;
+    --secondary-text: #6b7280;
+
+    --border: #e5e7eb;
+
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+
+    --danger: #dc2626;
+
+    --warning-background: #fef3c7;
+    --warning-text: #92400e;
+
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    background: var(--card-background);
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 20px;
+}
+
+
+.header-content {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.header h1 {
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+
+.header p {
+    color: var(--secondary-text);
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   THEME BUTTON
+======================================== */
+
+.theme-button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--background);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.theme-button:hover {
+    transform: scale(1.08);
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.container {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* ========================================
+   BALANCE CARD
+======================================== */
+
+.balance-card {
+    background: var(--card-background);
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+
+.balance-label {
+    color: var(--secondary-text);
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+
+#totalBalance {
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   SPENDING LIMIT
+======================================== */
+
+.limit-container {
+    width: 100%;
+    max-width: 400px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: left;
+}
+
+
+.limit-container label {
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.limit-container input {
+    width: 100%;
+}
+
+
+/* ========================================
+   WARNING
+======================================== */
+
+.limit-warning {
+    margin-top: 15px;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    background: var(--warning-background);
+
+    color: var(--warning-text);
+
+    font-size: 14px;
+
+    display: none;
+}
+
+
+.limit-warning.show {
+    display: block;
+}
+
+
+/* ========================================
+   GENERAL CARD
+======================================== */
+
+.card {
+    background: var(--card-background);
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.card h2 {
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+#transactionForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group label {
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: var(--card-background);
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+
+/* ========================================
+   PRIMARY BUTTON
+======================================== */
+
+.primary-button {
+    border: none;
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+.primary-button:hover {
+    background: var(--primary-hover);
+}
+
+
+.primary-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+.section-header h2 {
+    margin-bottom: 0;
+}
+
+
+.section-header select {
+    width: auto;
+
+    min-width: 160px;
+}
+
+
+/* ========================================
+   TRANSACTION LIST
+======================================== */
+
+.transaction-list {
+    max-height: 400px;
+
+    overflow-y: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* ========================================
+   EMPTY MESSAGE
+======================================== */
+
+.empty-message {
+    text-align: center;
+
+    padding: 30px 15px;
+
+    color: var(--secondary-text);
+}
+
+
+.empty-message p {
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+.empty-message span {
+    font-size: 14px;
+}
+
+
+/* ========================================
+   TRANSACTION ITEM
+======================================== */
+
+.transaction-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--card-background);
+}
+
+
+.transaction-info {
+    flex: 1;
+}
+
+
+.transaction-name {
+    font-weight: bold;
+
+    margin-bottom: 3px;
+}
+
+
+.transaction-category {
+    color: var(--secondary-text);
+
+    font-size: 13px;
+}
+
+
+.transaction-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.transaction-amount {
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+.delete-button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--danger);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    padding: 5px;
+
+    border-radius: 5px;
+
+    transition: background 0.2s ease;
+}
+
+
+.delete-button:hover {
+    background: rgba(220, 38, 38, 0.1);
+}
+
+
+/* ========================================
+   CHART
+======================================== */
+
+.chart-card {
+    text-align: center;
+}
+
+
+.chart-description {
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    margin-top: -10px;
+
+    margin-bottom: 20px;
+}
+
+
+.chart-container {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 450px;
+
+    height: 350px;
+
+    margin: 0 auto;
+}
+
+
+#expenseChart {
+    max-width: 100%;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    text-align: center;
+
+    padding: 25px 15px;
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+}
+
+
+.footer p:first-child {
+    font-weight: bold;
+
+    margin-bottom: 3px;
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+body.dark-mode {
+    --background: #111827;
+
+    --card-background: #1f2937;
+
+    --text: #f9fafb;
+
+    --secondary-text: #9ca3af;
+
+    --border: #374151;
+
+    --primary: #6366f1;
+
+    --primary-hover: #818cf8;
+
+    --danger: #f87171;
+
+    --warning-background: #451a03;
+
+    --warning-text: #fcd34d;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 15px;
+    }
+
+
+    .header-content {
+        width: 94%;
+
+        align-items: flex-start;
+    }
+
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+
+    .header p {
+        font-size: 13px;
+    }
+
+
+    .container {
+        width: 94%;
+
+        margin: 20px auto;
+    }
+
+
+    .card,
+    .balance-card {
+        padding: 20px;
+    }
+
+
+    #totalBalance {
+        font-size: 30px;
+    }
+
+
+    .section-header {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .section-header select {
+        width: 100%;
+    }
+
+
+    .transaction-item {
+        align-items: flex-start;
+    }
+
+
+    .transaction-right {
+        flex-direction: column;
+
+        align-items: flex-end;
+
+        gap: 5px;
+    }
+
+
+    .chart-container {
+        height: 300px;
+    }
+}
